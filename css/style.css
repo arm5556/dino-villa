@@ -6,8 +6,9 @@
 @import url('animate.css');
 
 body {
-	font-family:'Open Sans', Arial, sans-serif;
-	font-size:14px;
+	/* font-family:'Open Sans', Arial, sans-serif; */
+	font-family: 'Itim', cursive;
+	font-size:18px;
 	font-weight:300;
 	line-height:1.6em;
 	color:#333;

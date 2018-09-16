@@ -18,6 +18,7 @@
 	<link rel="stylesheet" type="text/css" href="css/demo.css" />
 	<link rel="stylesheet" type="text/css" href="css/set1.css" />
 	<link href="css/style.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Itim" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,6 +37,37 @@
 		$(function(){
 			$("#header").load("header.html"); 
 			$("#footer").load("footer.html"); 
+		});
+		
+		$(document).ready ( function(){
+			var photoCount = 41;
+			var folder = 'dino2';
+			var fileNamePattern = 'dino2 ({index})';
+
+			var rowElement = '<div class="row" style="margin-top: 4px;"><div class="col-md-12">';
+			var colElement = '<a href="img/'+folder+ '/'+fileNamePattern+'.jpg" class="flipLightBox">'
+				+'	<img class="mobile-max-width" src="img/'+folder+'/small/'+fileNamePattern+'.jpg" width="280" height="200" alt="Image {index}" />'
+				+'</a>';
+			
+			var photoElements = '';
+
+			for (var i=0; i<photoCount; i++ ){
+				if (i === 0 || i % 4 === 0 ) {
+					if (i > 0) {
+						photoElements = photoElements.concat('</div></div>');
+					}
+					photoElements = photoElements.concat(rowElement);
+				}
+				var find = '{index}';
+				var re = new RegExp(find, 'g');
+				var col = colElement.replace(re, photoCount-i);
+				photoElements = photoElements.concat(col);
+			}
+
+			photoElements = photoElements.concat('</div></div>');
+
+			$('#gallery').append(photoElements);
+		
 		});
     </script> 
   </head>
@@ -136,294 +168,6 @@
 	<div class="portfolio">
 		<div id="gallery" class="container">
 		
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0001.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0001.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0002.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0002.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0003.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0003.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0004.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0004.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0005.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0005.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0006.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0006.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0007.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0007.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0008.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0008.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0009.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0009.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0010.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0010.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0011.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0011.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0012.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0012.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0013.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0013.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0014.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0014.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0015.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0015.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0016.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0016.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0017.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0017.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0018.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0018.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0019.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0019.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0020.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0020.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0021.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0021.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0022.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0022.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0023.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0023.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0024.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0024.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0025.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0025.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0026.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0026.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0027.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0027.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0028.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0028.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0029.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0029.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0030.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0030.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0031.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0031.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0032.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0032.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0033.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0033.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0034.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0034.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0035.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0035.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0036.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0036.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0037.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0037.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0038.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0038.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0039.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0039.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0040.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0040.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0041.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0041.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0042.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0042.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0043.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0043.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0044.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0044.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0045.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0045.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0046.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0046.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0047.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0047.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Three</b> Text to accompany the third lightbox image</span>
-					</a>
-
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0048.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0048.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>The Group 1 Final LightBox</b> Text to accompany the last of the lighboxes</span>
-					</a>
-				</div>
-			</div>
-			<div class="row" style="margin-top: 4px;">
-				<div class="col-md-12">
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0049.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0049.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 1</b> Text to accompany first lightbox image</span>
-					</a>
-					<a href="img/dino2/Dino villa2_๑๘๐๕๒๙_0050.jpg" class="flipLightBox">
-						<img class="mobile-max-width" src="img/dino2/small/Dino villa2_๑๘๐๕๒๙_0050.jpg" width="280" height="200" alt="Image 1" />
-						<span><b>LightBox Group 1, Image 2</b><br />Text to accompany 2nd lightbox image</span>
-					</a>
-				</div>
-			</div>
 		</div>
 	</div>
 	
